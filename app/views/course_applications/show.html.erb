@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @course_application.course %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @course_application.user %>
+</p>
+
+<p>
+  <strong>Reason for applying:</strong>
+  <%= @course_application.reason_for_applying %>
+</p>
+
+<p>
+  <strong>Prior study:</strong>
+  <%= @course_application.prior_study %>
+</p>
+
+<%= link_to 'Edit', edit_course_application_path(@course_application) %> |
+<%= link_to 'Back', course_applications_path %>

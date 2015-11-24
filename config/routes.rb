@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :course_applications
+  resources :courses
   resources :groups do
     member do
       get :leave, :join

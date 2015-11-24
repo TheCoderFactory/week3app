@@ -20,6 +20,16 @@
   <%= @profile.user.email %>
 </p>
 
+<hr>
+<h3>Groups</h3>
+<ul>
+<% @profile.user.groups.each do |group| %>
+  <li><%= link_to group.name, group %></li>
+<% end %>
+</ul>
+<hr>
+
+
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
 

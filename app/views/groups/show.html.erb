@@ -13,7 +13,7 @@
 <hr>
 <h2>Members</h2>
 <ul>
-	<% @group.users.each do |user| %>
+	<% @users.each do |user| %>
 		<li><%= user.profile.name if user.profile %></li>
 	<% end %>
 </ul>
@@ -25,11 +25,7 @@
 		<%= link_to 'Join group', join_group_path(@group) %>
 	<% end %>
 <% end %>
-
-
-
-
-
+<br>
 
 
 <%= link_to 'Edit', edit_group_path(@group) %> |

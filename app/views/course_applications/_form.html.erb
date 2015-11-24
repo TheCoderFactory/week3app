@@ -1,0 +1,18 @@
+<%= simple_form_for(@course_application) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <% if params[:course] %>
+      <%= f.input :course_id, as: :hidden, input_html: { value: @course.id } %>
+    <% else %>
+      <%= f.association :course %>
+    <% end %>
+    
+    <%= f.input :reason_for_applying %>
+    <%= f.input :prior_study %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

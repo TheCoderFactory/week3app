@@ -1,5 +1,16 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:leave, :join, :show, :edit, :update, :destroy]
+
+  def join
+    @group.users << current_user
+    redirect_to group_path(@group)
+  end
+
+  def leave
+    @group.users.delete(current_user)
+    # current_user.groups.delete(@group)
+    redirect_to group_path(@group)
+  end
 
   # GET /groups
   # GET /groups.json
@@ -10,6 +21,8 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    # @group = @group.includes(:users)
+    @users = @group.users
   end
 
   # GET /groups/new

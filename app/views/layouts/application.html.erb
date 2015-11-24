@@ -12,6 +12,10 @@
 <!-- This is a comment -->
 <% if user_signed_in? %>
 	<%= link_to 'Create a group', new_group_path %> 
+	<%= link_to 'All groups', groups_path %> 
+	<%= link_to 'My profile', profile_path(current_user.profile) %>
+	<%= link_to 'All courses', courses_path %> 
+
 	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %> 
 	Hi, <%= current_user.email %>
 <% else %>
