@@ -1,0 +1,18 @@
+<h1>Welcome</h1>
+
+<% if user_signed_in? %>
+	<%= link_to 'See your profile', profile_path(current_user.profile) %>
+
+	<h2>Tell us what you are doing right now!</h2>
+	<%= render 'status_updates/form' %>
+
+<% end %>
+
+<hr>
+
+<% @status_updates.each do |status_update| %>
+	<p><strong>Posted by: <%= status_update.user.profile.name if status_update.user.profile %></strong></p>
+	<p><strong>Status:</strong></p>
+	<p><%= status_update.status %></p>
+	<p>Posted on: <%= status_update.created_at.strftime('%l:%M%p %d %b %y')%></p>
+<% end %>
